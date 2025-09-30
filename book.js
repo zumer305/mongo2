@@ -22,11 +22,16 @@ const userSchema=new mongoose.Schema({
         type:Number,//"299" string ma bhj skty
         default:0,
     },
+    price:{
+        type:Number,
+        min:[6,"error value not true"],//err.errors.price.properties.message
+    },
     category:{
         type:String,
         enum:["yes","no"],//bs in dono ma sa ho skti category ki value
     },
     genre:[String],
  
-});
+}); //rules just follow at the time of insertion not at updation ---{runValidatore:true} agar updation pr b rules follow krny
+
 const bok=mongoose.model("bok",userSchema); 
