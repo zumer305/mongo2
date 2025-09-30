@@ -36,11 +36,8 @@ const user=mongoose.model("user",userSchema); //collection------ user(table)
 // show collections (cmd) 
 // capital=small
 // singular=plural
-const user1=new user({
-    name:"zumer",
-    age:23,
-    email:"zumer305@gmail.com",
-})
+// 
+
 // user1.save();
 // const user2=new user({
 //     name:"ali",
@@ -62,5 +59,22 @@ user.insertMany([
     console.log(data);
 });
 // db.users.deleteMany({});
-user.find({age:{$gt:10}}).then((res)=> {console.log(res);}) //findOne
-.catch((err)=>{console.log (err);});
+// user.find({age:{$gt:10}}).then((res)=> {console.log(res);}) //findOne
+// .catch((err)=>{console.log (err);});
+
+
+// update 
+// user.updateOne({name:"wahab"},{$set:{age:22}}).then((res)=>{ //findOneAndUpdate
+//     console.log(res);
+// })
+// .catch((err)=>{
+//     console.log(err);
+// })
+
+// delete 
+user.deleteOne({name:"zumer"}).then((res)=>{ //deleteMany //findOneAndDelete //findByIdAndDelete
+    console.log(res);
+})
+.catch((err)=>{
+    console.log(err);
+});
